@@ -1,0 +1,26 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: DataLogger
+    network: sepolia
+    source:
+      # 部署合约后，将下面的地址替换为实际合约地址
+      address: "0x30A80495D360C1426C976b5A26ca8c92C9917589"
+      abi: DataLogger
+      # 填入部署交易所在的区块号（加速索引，避免从第0块扫起）
+      startBlock: 10615061
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - DataStored
+      abis:
+        - name: DataLogger
+          file: ./abis/DataLogger.json
+      eventHandlers:
+        - event: DataStored(indexed address,string,uint256)
+          handler: handleDataStored
+      file: ./src/mapping.ts

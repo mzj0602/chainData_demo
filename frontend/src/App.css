@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #7c3aed;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 12px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+  background: #1a1f2e;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.tabs button:hover {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.tabs button.active {
+  background: #7c3aed;
+  color: #fff;
+  border-color: #7c3aed;
+}
+
+/* Card */
+.card {
+  background: #1a1f2e;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #e2e8f0;
+}
+
+.desc {
+  color: #64748b;
+  font-size: 13px;
+}
+
+label {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: -8px;
+}
+
+input, textarea {
+  width: 100%;
+  background: #0f1117;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #e2e8f0;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #7c3aed;
+}
+
+button {
+  padding: 10px 20px;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #6d28d9;
+}
+
+button:disabled {
+  background: #374151;
+  cursor: not-allowed;
+}
+
+/* Result */
+.result {
+  background: #0f1117;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  color: #a78bfa;
+  word-break: break-all;
+}
+
+code.break {
+  word-break: break-all;
+}
+
+.copy {
+  align-self: flex-start;
+  padding: 4px 10px;
+  font-size: 12px;
+  background: #374151;
+}
+
+.status {
+  color: #34d399;
+  font-size: 13px;
+}
+
+.error {
+  color: #f87171;
+  font-size: 13px;
+}
+
+.account {
+  font-size: 13px;
+  color: #34d399;
+}
+
+/* Two-column layout */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.two-col > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+}
+
+.data-table th {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.data-table tr:hover td {
+  background: #0f1117;
+}
+
+/* Link */
+a {
+  color: #7c3aed;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .tabs button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

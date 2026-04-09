@@ -1,0 +1,19 @@
+# 私钥和密钥文件（绝对不能提交）
+.env
+hardhat/.env
+frontend/.env
+
+# 依赖
+node_modules/
+hardhat/node_modules/
+frontend/node_modules/
+subgraph/node_modules/
+
+# 编译产物
+hardhat/artifacts/
+hardhat/cache/
+subgraph/generated/
+subgraph/build/
+
+# 系统文件
+.DS_Store

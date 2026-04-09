@@ -1,0 +1,8 @@
+type DataStored @entity(immutable: true) {
+  id: Bytes!
+  sender: Bytes!         # address
+  data: String!          # 加密后的 hex 字符串
+  timestamp: BigInt!     # block.timestamp
+  blockNumber: BigInt!
+  transactionHash: Bytes!
+}
