@@ -1,27 +1,23 @@
 import { useState } from "react";
+import PathA from "./components/PathA";
+import PathB from "./components/PathB";
 import CryptoTool from "./components/CryptoTool";
-import EthTransfer from "./components/EthTransfer";
-import ReadOnChain from "./components/ReadOnChain";
-import ContractLogger from "./components/ContractLogger";
-import GraphQuery from "./components/GraphQuery";
 import "./App.css";
 
 const TABS = [
-  { id: "crypto",   label: "① 加密/解密" },
-  { id: "transfer", label: "② ETH 转账上链" },
-  { id: "read",     label: "③ 读取链上数据" },
-  { id: "contract", label: "④ 合约日志上链" },
-  { id: "graph",    label: "⑤ The Graph 查询" },
+  { id: "pathA",  label: "路径 A — ETH 转账" },
+  { id: "pathB",  label: "路径 B — 合约日志" },
+  { id: "crypto", label: "加密调试工具" },
 ];
 
 export default function App() {
-  const [tab, setTab] = useState("crypto");
+  const [tab, setTab] = useState("pathA");
 
   return (
     <div className="app">
       <header>
         <h1>区块链数据上链平台</h1>
-        <p className="subtitle">数据加密 → 上链 → 链上读回 → 解密展示</p>
+        <p className="subtitle">明文 → XOR 加密 → 上链 → 链上读取 → 解密还原</p>
       </header>
 
       <nav className="tabs">
@@ -37,11 +33,9 @@ export default function App() {
       </nav>
 
       <main>
-        {tab === "crypto"   && <CryptoTool />}
-        {tab === "transfer" && <EthTransfer />}
-        {tab === "read"     && <ReadOnChain />}
-        {tab === "contract" && <ContractLogger />}
-        {tab === "graph"    && <GraphQuery />}
+        {tab === "pathA"  && <PathA />}
+        {tab === "pathB"  && <PathB />}
+        {tab === "crypto" && <CryptoTool />}
       </main>
     </div>
   );

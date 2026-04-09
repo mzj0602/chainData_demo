@@ -36,33 +36,57 @@ header h1 {
 /* Tabs */
 .tabs {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-  border-bottom: 1px solid #1e293b;
-  padding-bottom: 12px;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid #1e293b;
 }
 
 .tabs button {
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid #1e293b;
-  background: #1a1f2e;
-  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  color: #475569;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  position: relative;
+  top: 2px;
+}
+
+.tabs button:first-child {
+  font-size: 15px;
+  padding: 12px 24px;
+}
+
+.tabs button:last-child {
+  font-size: 12px;
+  padding: 7px 14px;
+  color: #374151;
+  margin-left: auto;
 }
 
 .tabs button:hover {
-  background: #1e293b;
-  color: #e2e8f0;
+  color: #94a3b8;
+  background: #1a1f2e;
 }
 
 .tabs button.active {
-  background: #7c3aed;
-  color: #fff;
-  border-color: #7c3aed;
+  background: #1a1f2e;
+  color: #e2e8f0;
+  border-color: #1e293b;
+  border-bottom-color: #1a1f2e;
+}
+
+.tabs button:first-child.active {
+  color: #a78bfa;
+}
+
+.tabs button:last-child.active {
+  color: #64748b;
+  font-size: 12px;
 }
 
 /* Card */
@@ -239,6 +263,68 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Path layout */
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.path-header h2 {
+  font-size: 20px;
+  color: #e2e8f0;
+  margin-bottom: 6px;
+}
+
+.wallet-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Step indicator */
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-num {
+  background: #7c3aed;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+/* Inline encryption preview */
+.inline-step {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #0f1117;
+  border: 1px dashed #2d3748;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.step-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contract-addr {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #64748b;
 }
 
 @media (max-width: 600px) {
